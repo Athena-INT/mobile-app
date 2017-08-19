@@ -15,3 +15,11 @@ public class Movement : MonoBehaviour {
 		movement.z = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		rotation = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
 	}
+
+	void FixedUpdate ()
+	{
+		transform.Translate(movement, Space.Self);
+		transform.Rotate(0f, rotation, 0f);
+	}
+	
+}
