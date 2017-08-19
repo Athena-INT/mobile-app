@@ -10,3 +10,8 @@ public class Movement : MonoBehaviour {
 	private Vector3 movement;
 	private float rotation;
 
+	void Update ()
+	{
+		movement.z = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+		rotation = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
+	}
